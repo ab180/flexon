@@ -221,7 +221,7 @@ func (f *Float32) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-type Float64 int64
+type Float64 float64
 
 func (f *Float64) UnmarshalJSON(data []byte) error {
 	any := jsoniter.Get(data)
@@ -336,9 +336,9 @@ func DefaultAnyToFloat(any jsoniter.Any) (float64, error) {
 			break
 		}
 
-		f, err := strconv.ParseFloat(str, 10)
+		f, err := strconv.ParseFloat(str, 64)
 		if err != nil {
-			return f, fmt.Errorf("invalid json float: %v", err)
+			return 0, fmt.Errorf("invalid json float: %v", err)
 		}
 		return f, nil
 	}
