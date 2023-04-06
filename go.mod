@@ -1,4 +1,4 @@
-module github.com/KimMachineGun/flexon
+module github.com/ab180/flexon
 
 go 1.14
 
