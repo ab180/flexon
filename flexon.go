@@ -347,10 +347,5 @@ func DefaultAnyToFloat(any jsoniter.Any) (float64, error) {
 }
 
 func DefaultAnyToString(any jsoniter.Any) (string, error) {
-	switch any.ValueType() {
-	case jsoniter.StringValue, jsoniter.NilValue, jsoniter.NumberValue, jsoniter.BoolValue:
-		return any.ToString(), nil
-	}
-
-	return "", errors.New("invalid json string")
+	return any.ToString(), nil
 }

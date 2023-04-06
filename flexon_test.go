@@ -456,6 +456,14 @@ func TestDefaultAnyToString(t *testing.T) {
 			data: `-1.9`,
 			want: "-1.9",
 		},
+		{
+			data: `["a", "b"]`,
+			want: "[\"a\", \"b\"]",
+		},
+		{
+			data: `{"a": 1}`,
+			want: "{\"a\": 1}",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.data, func(t *testing.T) {
