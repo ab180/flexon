@@ -34,6 +34,10 @@ func (b *Bool) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
+func (b *Bool) Unwrap() bool {
+	return bool(*b)
+}
+
 type Int int
 
 func (i *Int) UnmarshalJSON(data []byte) error {
@@ -49,6 +53,10 @@ func (i *Int) UnmarshalJSON(data []byte) error {
 
 	*i = Int(v)
 	return nil
+}
+
+func (i *Int) Unwrap() int {
+	return int(*i)
 }
 
 type Int8 int8
@@ -68,6 +76,10 @@ func (i *Int8) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
+func (i *Int8) Unwrap() int8 {
+	return int8(*i)
+}
+
 type Int16 int16
 
 func (i *Int16) UnmarshalJSON(data []byte) error {
@@ -83,6 +95,10 @@ func (i *Int16) UnmarshalJSON(data []byte) error {
 
 	*i = Int16(v)
 	return nil
+}
+
+func (i *Int16) Unwrap() int16 {
+	return int16(*i)
 }
 
 type Int32 int32
@@ -102,6 +118,10 @@ func (i *Int32) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
+func (i *Int32) Unwrap() int32 {
+	return int32(*i)
+}
+
 type Int64 int64
 
 func (i *Int64) UnmarshalJSON(data []byte) error {
@@ -117,6 +137,10 @@ func (i *Int64) UnmarshalJSON(data []byte) error {
 
 	*i = Int64(v)
 	return nil
+}
+
+func (i *Int64) Unwrap() int64 {
+	return int64(*i)
 }
 
 type Uint uint
@@ -136,6 +160,10 @@ func (u *Uint) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
+func (u *Uint) Unwrap() uint {
+	return uint(*u)
+}
+
 type Uint8 uint8
 
 func (u *Uint8) UnmarshalJSON(data []byte) error {
@@ -151,6 +179,10 @@ func (u *Uint8) UnmarshalJSON(data []byte) error {
 
 	*u = Uint8(v)
 	return nil
+}
+
+func (u *Uint8) Unwrap() uint8 {
+	return uint8(*u)
 }
 
 type Uint16 uint16
@@ -170,6 +202,10 @@ func (u *Uint16) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
+func (u *Uint16) Unwrap() uint16 {
+	return uint16(*u)
+}
+
 type Uint32 uint32
 
 func (u *Uint32) UnmarshalJSON(data []byte) error {
@@ -185,6 +221,10 @@ func (u *Uint32) UnmarshalJSON(data []byte) error {
 
 	*u = Uint32(v)
 	return nil
+}
+
+func (u *Uint32) Unwrap() uint32 {
+	return uint32(*u)
 }
 
 type Uint64 uint64
@@ -204,6 +244,10 @@ func (u *Uint64) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
+func (u *Uint64) Unwrap() uint64 {
+	return uint64(*u)
+}
+
 type Float32 float32
 
 func (f *Float32) UnmarshalJSON(data []byte) error {
@@ -219,6 +263,10 @@ func (f *Float32) UnmarshalJSON(data []byte) error {
 
 	*f = Float32(v)
 	return nil
+}
+
+func (f *Float32) Unwrap() float32 {
+	return float32(*f)
 }
 
 type Float64 float64
@@ -238,6 +286,10 @@ func (f *Float64) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
+func (f *Float64) Unwrap() float64 {
+	return float64(*f)
+}
+
 type String string
 
 func (s *String) UnmarshalJSON(data []byte) error {
@@ -253,6 +305,10 @@ func (s *String) UnmarshalJSON(data []byte) error {
 
 	*s = String(v)
 	return nil
+}
+
+func (s *String) Unwrap() string {
+	return string(*s)
 }
 
 func DefaultAnyToBool(any jsoniter.Any) (bool, error) {
